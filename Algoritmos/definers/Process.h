@@ -12,7 +12,8 @@ class Process: public CPU{
         
         // getters de tempo e prioridade
         int gettime(){return data_init;};
-        int getpriority(){return priority;}
+        int getpriority(){return priority;};
+        int getid() {return id;};
 
     int id; // identificador
 

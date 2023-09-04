@@ -11,12 +11,13 @@ class FCFS_Scheduler : public Process {
         FCFS_Scheduler(int id, int data_int, int time, int priority)
             : Process(id, data_int, time, priority){};
  
-        void addTask(int arrivalTime);
-        void execute();
+        void escalonate(); // método para realizar o escalonamento do processo
+        void endscalonate(); // método para finalizar o escalonamento do processo
+        void print(); // método para printar o escalonamento
+    FCFS_Scheduler *pointer;
 
-private:
-    std::vector<std::pair<int, int>> processList; // Cria um vetor de pares (priority, time)
-
+    private:
+        std::list<std::pair<int, std::pair<int, int>>> dictList; // dicionário de processos
 };
 
 #endif // FCFS_SCHEDULER_H
